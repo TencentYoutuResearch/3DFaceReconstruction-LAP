@@ -33,7 +33,7 @@ pip install facenet-pytorch
 ```
 
 ## DEMO
-Download the [pretrained model](https://drive.google.com/file/d/1GNxMlR3-MKG_qRnO06xCozSYmUw-k5Bj/view?usp=sharing), and then run:
+Download the [pretrained model](https://drive.google.com/file/d/1-Lr9V7T3G5xn1WAfR0F5Mh_rKRgdVs88/view?usp=sharing), and then run:
 
 ```
 python demo.py --input ./images --result ./results --checkpoint_lap ./demo/checkpoint300.pth

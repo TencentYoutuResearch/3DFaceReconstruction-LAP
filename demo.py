@@ -67,7 +67,7 @@ class Demo():
         self.netL = self.netL.to(self.device)
         self.netV = self.netV.to(self.device)
         self.load_checkpoint()
-        #self.save_checkpoint()
+        self.save_checkpoint()
 
         self.netD.eval()
         self.netA.eval()
@@ -109,7 +109,7 @@ class Demo():
         states = {}
         for net_name in self.network_names:
             states[net_name] = getattr(self, net_name).state_dict()
-        checkpoint_path = os.path.join('./demo', 'checkpoint300_fix.pth')
+        checkpoint_path = os.path.join('./demo', 'checkpoint300_fix2.pth')
         print(f"Saving checkpoint to {checkpoint_path}")
         torch.save(states, checkpoint_path)
 
