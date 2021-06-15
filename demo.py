@@ -67,7 +67,7 @@ class Demo():
         self.netL = self.netL.to(self.device)
         self.netV = self.netV.to(self.device)
         self.load_checkpoint()
-        self.save_checkpoint()
+        #self.save_checkpoint()
 
         self.netD.eval()
         self.netA.eval()
@@ -90,7 +90,7 @@ class Demo():
                 'max_depth': self.max_depth,
                 'fov': self.fov,
             }
-            self.renderer_mr = Renderer(cfgs)
+            self.renderer_mr = Renderer(cfgs, im_size=128)
 
     def load_checkpoint(self):
         print(f"Loading checkpoint from {self.checkpoint_path_lap}")
@@ -253,13 +253,13 @@ class Demo():
 
     def render_animation(self):
         print(f"Rendering video animations")
-        b, h, w = self.canon_depth.shape
+        b, h, w = self.canon_depth_lap.shape
 
         ## morph from target view to canonical
         morph_frames = 15
-        view_zero = torch.FloatTensor([0.15*np.pi/180*60, 0,0,0,0,0]).to(self.canon_depth.device)
-        morph_s = torch.linspace(0, 1, morph_frames).to(self.canon_depth.device)
-        view_morph = morph_s.view(-1,1,1) * view_zero.view(1,1,-1) + (1-morph_s.view(-1,1,1)) * self.view.unsqueeze(0)  # TxBx6
+        view_zero = torch.FloatTensor([0.15*np.pi/180*60, 0,0,0,0,0]).to(self.canon_depth_lap.device)
+        morph_s = torch.linspace(0, 1, morph_frames).to(self.canon_depth_lap.device)
+        view_morph = morph_s.view(-1,1,1) * view_zero.view(1,1,-1) + (1-morph_s.view(-1,1,1)) * self.view_lap.unsqueeze(0)  # TxBx6
 
         ## yaw from canonical to both sides
         yaw_frames = 80
@@ -287,7 +287,7 @@ class Demo():
             return out_seq
 
         ## textureless shape
-        front_light = torch.FloatTensor([0,0,1]).to(self.canon_depth.device)
+        front_light = torch.FloatTensor([0,0,1]).to(self.canon_depth_lap.device)
         
         canon_shape_im = (self.canon_normal_lap * front_light.view(1,1,1,3)).sum(3).clamp(min=0).unsqueeze(1)
         canon_shape_im = canon_shape_im.repeat(1,3,1,1) *0.7
@@ -328,7 +328,7 @@ class Demo():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Demo configurations.')
     parser.add_argument('--input', default='./images', type=str, help='Path to the directory containing input images')
-    parser.add_argument('--result', default='./results', type=str, help='Path to the directory for saving results')
+    parser.add_argument('--result', default='./results5', type=str, help='Path to the directory for saving results')
     parser.add_argument('--checkpoint_lap', default='./demo/checkpoint300.pth', type=str, help='Path to the checkpoint file')
     parser.add_argument('--output_size', default=128, type=int, help='Output image size')
     parser.add_argument('--gpu', default=True, action='store_true', help='Enable GPU')
