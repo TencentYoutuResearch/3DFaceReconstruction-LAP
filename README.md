@@ -4,6 +4,8 @@
 
 Pytorch implemetation of paper 'Learning to Aggregate and Personalize 3D Face from In-the-Wild Photo Collection'
 
+<img src="./teaser.png" width="800">
+
 ## Introduction
 This repository contains demo of LAP (Learning to Aggregate and Personalize) framework for reconstructing 3D face. Right now we provide an early version of demo for testing on in-the-wild images. The output size is 128 and the model is finetuned on CelebAMask-HQ Dataset.
 
@@ -54,3 +56,15 @@ If you want to accelarate the inference procedure, you may delete the branches i
 
 ## License
 The code contained in this repository is under MIT License and is free for commercial and non-commercial purposes. The dependencies, in particular, [neural-renderer-pytorch](https://github.com/daniilidis-group/neural_renderer), [facenet](https://github.com/timesler/facenet-pytorch), may have its own license.
+
+
+## Citation
+```
+@InProceedings{Zhang_2021_CVPR,
+    author    = {Zhang, Zhenyu and Ge, Yanhao and Chen, Renwang and Tai, Ying and Yan, Yan and Yang, Jian and Wang, Chengjie and Li, Jilin and Huang, Feiyue},
+    title     = {Learning To Aggregate and Personalize 3D Face From In-the-Wild Photo Collection},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year      = {2021},
+    pages     = {14214-14224}
+}
+```
