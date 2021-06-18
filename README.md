@@ -1,9 +1,8 @@
 
-## Learning to Aggregate and Personalize 3D Face from In-the-Wild Photo Collection
+## Learning to Aggregate and Personalize 3D Face from In-the-Wild Photo Collection [Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Learning_To_Aggregate_and_Personalize_3D_Face_From_In-the-Wild_Photo_CVPR_2021_paper.pdf) | [Arxiv](http://arxiv.org/abs/2106.07852)
 
 
 Official pytorch implemetation of 'Learning to Aggregate and Personalize 3D Face from In-the-Wild Photo Collection'. 
-[Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Learning_To_Aggregate_and_Personalize_3D_Face_From_In-the-Wild_Photo_CVPR_2021_paper.pdf) |  [Arxiv](http://arxiv.org/abs/2106.07852)
 
 <img src="./teaser.png" width="800">
 
