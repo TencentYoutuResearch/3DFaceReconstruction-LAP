@@ -2,12 +2,15 @@
 ## Learning to Aggregate and Personalize 3D Face from In-the-Wild Photo Collection
 
 
-Pytorch implemetation of paper 'Learning to Aggregate and Personalize 3D Face from In-the-Wild Photo Collection'
+Official pytorch implemetation of 'Learning to Aggregate and Personalize 3D Face from In-the-Wild Photo Collection'. 
+[Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Zhang_Learning_To_Aggregate_and_Personalize_3D_Face_From_In-the-Wild_Photo_CVPR_2021_paper.pdf) |  [Arxiv](http://arxiv.org/abs/2106.07852)
 
 <img src="./teaser.png" width="800">
 
 ## Introduction
 This repository contains demo of LAP (Learning to Aggregate and Personalize) framework for reconstructing 3D face. Right now we provide an early version of demo for testing on in-the-wild images. The output size is 128 and the model is finetuned on CelebAMask-HQ Dataset.
+
+<img src="./compare.png" width="800">
 
 ## Requirments
 The code is tested on pytorch 1.3.0 with torchvision 0.4.1
