@@ -7,7 +7,7 @@ Official pytorch implemetation of 'Learning to Aggregate and Personalize 3D Face
 <img src="./teaser.png" width="800">
 
 ## Introduction
-This repository contains LAP (Learning to Aggregate and Personalize) framework for reconstructing 3D face. Right now we provide an early version of demo for testing on in-the-wild images. The output size is 128 and the model is finetuned on CelebAMask-HQ Dataset.
+This repository contains LAP (Learning to Aggregate and Personalize) framework for reconstructing 3D face. Right now we provide a version of demo for testing on in-the-wild images. The output size is 128 and the model is finetuned on CelebAMask-HQ Dataset.
 
 <img src="./results.png" width="800">
 
